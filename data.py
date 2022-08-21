@@ -4,9 +4,10 @@
 import h5py
 import numpy as np
 
-file = h5py.File('testfile1.mat', 'r')
+file = h5py.File('../testfile1.mat', 'r')
 
-# print(list(file)) # List file structure
+print(list(file)) # List file structure
+print( type(list(file)) )
 
 # 'file/data'
     # print(list(file['data'])) # List structure of 'data'
@@ -82,7 +83,7 @@ struct = file.get('data/struct_')
 
 ## Print 'struct2_'
 struct_2 = file.get('data/struct2_')
-print(list(struct_2))
+    # print(list(struct_2))
 
 ### Print 'struct2_/type'
 num = 1
@@ -103,11 +104,11 @@ str3 = ''.join(chr(i) for i in color0)
     # print(str3)
 
 ### Print 'struct2_/x'
-print(list(file['data/struct2_/x']))
-print(len( list(file['data/struct2_/x']) )  )
+    # print(list(file['data/struct2_/x']))
+    # print(len( list(file['data/struct2_/x']) )  )
 arr = file['data/struct2_/x']
 xArr = file[arr[1][0]]
-print(np.transpose(xArr))                               # Matrix now follows the shape shown in matlab
+    # print(np.transpose(xArr))                               # Matrix now follows the shape shown in matlab
     # print(np.array(file[struct_2['x'][0][0]]))
     # print(np.array(file[struct_2['x'][1][0]]))
 
